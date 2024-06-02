@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "lib": ["ESNext", "DOM"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    // 设置了该项会导致报错"*"表示任何路径，而node_modules表示node_modules的路径
+    // 所以会导致tsup中的"fs"会被映射到"node_modules/fs"而不是"fs"。
+    "paths": {
+      //   "*": ["node_modules/*"],
+      //   "fs": ["node_modules/@types/node/fs"]
+    }
+  }
+  //   "include": ["src/**/*"],
+  //   "exclude": ["node_modules"]
+}
