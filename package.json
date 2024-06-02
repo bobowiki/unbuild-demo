@@ -1,6 +1,6 @@
 {
   "name": "tsup-pkg",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "author": "bobowiki",
   "main": "./dist/index.js",
   "packageManager": "pnpm@9.1.4",
