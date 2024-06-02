@@ -17,10 +17,13 @@
     "dist"
   ],
   "scripts": {
+    "start": "tsx src/index.ts",
+    "release": "nrm use npm && npm publish",
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix",
     "build": "tsup",
-    "build:watch": "tsup --watch"
+    "build:watch": "tsup --watch",
+    "prepare": "simple-git-hooks"
   },
   "license": "MIT",
   "description": "",
@@ -30,8 +33,10 @@
     "eslint": "^9.4.0",
     "globals": "^15.3.0",
     "lint-staged": "^15.2.5",
+    "nrm": "^1.2.6",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^8.0.2",
+    "tsx": "^4.11.0",
     "typescript": "^5.4.5",
     "typescript-eslint": "^7.11.0"
   },
