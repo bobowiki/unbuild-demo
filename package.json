@@ -1,5 +1,5 @@
 {
-  "name": "tsup-pkg",
+  "name": "unbuild-pkg",
   "version": "2.0.0",
   "author": "bobowiki",
   "main": "./dist/index.js",
@@ -18,11 +18,12 @@
   ],
   "scripts": {
     "start": "tsx src/index.ts",
+    "dev": "node --watch-path=src dist/index.mjs",
     "release": "nrm use npm && npm publish",
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix",
-    "build": "tsup",
-    "build:watch": "tsup --watch",
+    "build": "unbuild",
+    "build:dev": "unbuild --stub --watch",
     "prepare": "simple-git-hooks"
   },
   "license": "MIT",
@@ -35,15 +36,18 @@
     "lint-staged": "^15.2.5",
     "nrm": "^1.2.6",
     "simple-git-hooks": "^2.11.1",
-    "tsup": "^8.0.2",
     "tsx": "^4.11.0",
     "typescript": "^5.4.5",
-    "typescript-eslint": "^7.11.0"
+    "typescript-eslint": "^7.11.0",
+    "unbuild": "^2.0.0"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --fix"
+  },
+  "engines": {
+    "node": ">= 18.0.0"
   }
 }
